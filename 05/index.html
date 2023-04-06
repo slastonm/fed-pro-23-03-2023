@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (let i = 1; i <= 10; i++) {
+            if (i === 5) {
+                continue;
+            }
+            if (i === 8) {
+                break;
+            }
+            //console.log(i); // виводимо значення в консоль
+        }
+        let arrTest = [1,3,4,6,7,8,9];
+        function returnPairArr(arr){
+            let newArr = [];
+            for(let i =0; i<arr.length; i++){
+                if(arr[i] %2 === 0){
+                    newArr.push(arr[i]);
+                }                
+            }
+            return newArr;
+        }
+        // console.log(returnPairArr(arrTest));
+
+        function buyItems(count){
+            let todoList = [];
+            for(let i=0; i<count; i++){
+                let product = prompt('Що купити ?');
+                todoList.push(product)
+            }
+            return todoList;
+        }
+        // console.log(`Список покупок ${buyItems(3)}`);
+
+        function sumNumbers(...numbers){
+            let summ = 0;
+            for(let i=0; i<numbers.length; i++){
+                // summ= summ+numbers[i];
+                
+                summ+=numbers[i];
+            }
+            return summ;
+        }
+        console.log(`Summ numbers ${sumNumbers(1,2,3,1)}`);
+
+        let obj = {
+            name: 'test'
+        }
+        obj['key']= 'secret key value';
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
