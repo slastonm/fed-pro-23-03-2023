@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function drawHtml(item){
+
+            document.write(`<p>${item}</p>`);
+        }
+        function drawTittle(titleText){
+            document.write(`<h3>${titleText}</h3>`);
+        }
+        function getDataAndDraw(dataCount, callbackFn){
+            for(let i=0; i<dataCount; i++){
+                let userData = prompt('User data');
+                console.log(`Ви ввели значення ${userData} передаємо його в функцію`);
+                alert(`Ви ввели значення ${userData} передаємо його в функцію`);
+                callbackFn(userData);
+            }
+        }
+        // drawHtml('hello');
+        getDataAndDraw(1, drawHtml);
+        // getDataAndDraw(2, drawTittle);
+
+    </script>
+</body>
+</html>
