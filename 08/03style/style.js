@@ -47,8 +47,21 @@ window.onload=()=>{
     let width = box.offsetWidth;
     let height = box.offsetHeight;
     console.log(width, height);
-    if(height>200){
-        box.classList.add('top');
-    }
+    // if(height>200){
+    //     box.classList.add('top');
+    // }
+    let domBox = box.getBoundingClientRect();
+    console.log(domBox);
 
+    let clientW = box.clientWidth;
+    let clientH = box.clientHeight;
+
+    console.log(clientH, clientW);
+
+    let boxStyle = getComputedStyle(box);
+    let marginTop = parseInt(boxStyle.marginTop);
+    let marginBottom = parseInt(boxStyle.marginBottom);
+    console.log(marginTop);
+    console.log(`margin bottom ${marginBottom}`);
+    console.log(marginBottom);
 }
