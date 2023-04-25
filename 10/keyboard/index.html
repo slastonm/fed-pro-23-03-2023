@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let main = document.querySelector('body');
+            let outputEl = document.querySelector('.output');
+            function clearOutput(){
+                outputEl.innerHTML = "";
+            }
+            main.onkeydown = function(e){
+                clearOutput();
+                console.log(e);
+                outputEl.innerHTML = `${e.key} code ${e.keyCode} info ${e.which}`;
+            }
+        }
+    </script>
+    <style>
+        .output{
+            text-align: center;
+            padding: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="output"></div>
+</body>
+</html>

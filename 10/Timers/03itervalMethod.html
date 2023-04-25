@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let couneter = 0;
+            let intervalHendlear;
+            function count(){
+                document.querySelector('.counet-block').innerHTML = couneter;
+                couneter++;
+            }
+            document.querySelector('.start').onclick = function(){
+                intervalHendlear = setInterval(count, 1000);
+            }
+            document.querySelector('.stop').onclick = function(){
+                clearInterval(intervalHendlear);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="counet-block">
+
+    </div>
+    <button class="start">
+        Start
+    </button>
+    <button class="stop">
+        Stop
+    </button>
+</body>
+</html>

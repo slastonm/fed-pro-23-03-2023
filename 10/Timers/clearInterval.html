@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            let outputEl = document.querySelector('p');
+            let btn = document.querySelector('.stopInterval');
+            function myTimer(){
+                let nowTime = new Date();
+                outputEl.innerHTML = `Tyme ${nowTime.toLocaleTimeString()}`;
+                
+            }
+            const myInterval = setInterval(myTimer, 1000);
+
+            btn.onclick = function(){
+                clearInterval(myInterval);
+            }
+
+            let btnStop = document.querySelector('.stopTimeout');
+            function timeOutFn(){
+                let div = document.querySelector('div');
+                div.innerHTML = `timeoutWork after 5sec`
+            }
+            const timeOutCounter = setTimeout(timeOutFn, 5000);
+            btnStop.onclick = function(){
+                clearTimeout(timeOutCounter);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <p>
+
+    </p>
+    <button class="stopInterval">
+        Stop
+    </button>
+    <div>
+        Timeout work
+    </div>
+    <button class="stopTimeout">
+        Stop time out 
+    </button>
+</body>
+</html>
