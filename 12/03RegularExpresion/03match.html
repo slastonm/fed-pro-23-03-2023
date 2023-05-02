@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let textString = 'Hello world 098? contain 167f add more 12323 and more 31';
+        let paternNumber = /\d\d\d/g;
+        let mathcResult = textString.match(paternNumber);
+        console.log(mathcResult);
+        let operation = "15 плюс 13 дорівнює 28";
+        // let operationNumber = /\d/
+        let operationNumbers = operation.match(/\d/g);
+        console.log(operationNumbers);
+
+        let stringText = "Are you Ok? Yes I'm OK ok, OK";
+        let okResult = stringText.match(/Ok/gi);
+        console.log(okResult);
+        let replaceOk = stringText.replace(/Ok/gi, 'fine');
+        console.log(replaceOk);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
