@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let pEl = document.querySelector('p');
+            let read = document.querySelector('.read');
+            let write = document.querySelector('.write');
+
+            read.onclick = function() {
+                // pEl.innerHTML = `${window.sessionStorage.length}`
+                // pEl.innerHTML += `<br>`;
+                // pEl.innerHTML += `${window.sessionStorage.key2}  and ${window.sessionStorage.key1} and ${window.sessionStorage['key3']}`;
+                pEl.innerHTML = `${window.localStorage.length}`
+                pEl.innerHTML += `<br>`;
+                pEl.innerHTML += `${window.localStorage.key2}  and ${window.localStorage.key1} and ${window.localStorage['key3']}`;
+
+            };
+            write.onclick = function() {
+                window.localStorage.setItem('key1', 'Key 1 value');
+                window.localStorage.key2 = 'Key 2 vale';
+                window.localStorage['key3'] = 'false';
+            };
+
+            let removeItem = document.querySelector('.remove');
+            removeItem.onclick = function() {
+                window.localStorage.removeItem('key1');
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <p>
+
+    </p>
+    <button class="read">
+        Read storage
+    </button>
+    <button class="write">
+        Write
+    </button>
+    <button class="remove">
+        Remove storage item
+    </button>
+</body>
+</html>

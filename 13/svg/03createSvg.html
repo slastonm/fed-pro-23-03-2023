@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            function createSvgRect(width, height){
+                let svgEl = document.createElementNS("http://www.w3.org/2000/svg","svg");
+                svgEl.setAttribute('width', width);
+                svgEl.setAttribute('height', height);
+                svgEl.setAttribute('style', 'border: 2px solid red');
+                let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', 0);
+                rect.setAttribute('y', 0);
+                rect.setAttribute('width', width-20);
+                rect.setAttribute('height', height-30);
+
+                svgEl.appendChild(rect);
+                document.body.appendChild(svgEl);    
+            }
+            createSvgRect(300, 200);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

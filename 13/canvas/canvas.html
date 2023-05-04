@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let cnavasEl = document.querySelector('canvas');
+            let ctx = cnavasEl.getContext('2d');
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, 100, 100);
+            cnavasEl.onclick = function() {
+                ctx.fillStyle = 'red';
+                ctx.fillRect(0, 0, 200, 200);
+            }
+        };
+    </script>
+</head>
+<body>
+    <canvas height="300" width="300" style="border: 1px solid black;">
+
+    </canvas>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
