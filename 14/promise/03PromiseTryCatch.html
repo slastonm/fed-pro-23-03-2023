@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let tryCatchPromise = new Promise(function(resolve, reject) {
+            try{
+                console.log("Promise working");
+                getSomeWork();
+                resolve("All work done");
+            }
+            catch(e){
+                reject(`Error info ${e.message}`);
+            }
+        });
+        tryCatchPromise.then(function(pormiseData) {
+            console.log(pormiseData);
+         }).catch(function(err){
+            console.log(`Promise error ${err}`);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

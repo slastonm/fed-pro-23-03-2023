@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1', true);
+        xhr.onreadystatechange = function() { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let obj = xhr.response;
+                console.log(obj);
+            }
+        };
+        xhr.responseType = 'json';
+        xhr.send(null);
+    </script>
+</head>
+<body>
+    <h1>
+        AJAX - Asynchronous JavaScript And XML.
+    </h1>
+</body>
+</html>
