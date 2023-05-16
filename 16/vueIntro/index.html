@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .list-item{
+            margin: 10px;
+            border:1px solid #ccc;
+        }
+        .admin{
+            color:red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Hello vue
+    </h1>
+    <div id="app">
+        <p>
+            {{productName}}
+        </p>
+        <p>
+            {{price}} - {{curency}}
+        </p>
+        <button v-on:click="price--">
+            Make sale 
+        </button>
+
+        <button @click="price++">
+            Up price
+        </button>
+        <button @click="productName='Phone'">
+            Change product name
+        </button>
+        <button @click="changeCurency">
+            Change curency price
+        </button>
+        <button @click="changeProductName('Toster')">
+            New product
+        </button>
+
+        <div v-if="showInfo">
+            Menu container
+        </div>
+        <!-- <div v-else>
+            V else
+        </div> -->
+        <button @click="toggleShowInfo">
+            <div v-if="showInfo">
+                Close menu
+            </div>
+            <div v-else>
+                Open menu
+            </div>
+
+        </button>
+        <div>
+            <a v-bind:href="link">Course 1</a>
+            <a :href="link">Course</a>
+            <img width="100" height="100" :src="src" alt="logo">
+        </div>
+        <ul>
+            <!-- <li>
+                {{users[0].name}}
+                {{users[0].age}}
+
+            </li> -->
+            <li 
+            v-for="user in users"
+            @click="adminMode(user)"
+            class="list-item"
+            :class="{admin:user.isAdmin}"
+            >
+                {{user.name}} - {{user.age}} - {{user.isAdmin}}
+            </li>
+
+        </ul>
+        <hr>
+        <ul>
+            <li 
+            v-for="user in justAdmin"
+            class="list-item"
+            :class="{admin:user.isAdmin}"
+            >
+                {{user.name}} - {{user.age}} - {{user.isAdmin}}
+            </li>
+        </ul>
+    </div>
+    <!-- {{productName}} -->
+    <script src="app.js"></script>
+</body>
+</html>
